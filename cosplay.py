@@ -7,7 +7,7 @@ from telegram import User, InlineQueryResultArticle, ParseMode, \
 from telegram.ext import Updater, InlineQueryHandler, CallbackQueryHandler, CommandHandler, MessageHandler, CallbackQueryHandler, Filters
 from telegram.utils.helpers import escape_markdown
 
-botToken = "2014324973:AAEFIga73EHC2AdkG7nbnfLnxgS_d92bXg0"
+botToken = ""
 
 cuscuzbot = telegram.Bot(botToken)
 
