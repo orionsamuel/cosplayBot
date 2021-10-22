@@ -7,7 +7,7 @@ from telegram import User, InlineQueryResultArticle, ParseMode, \
 from telegram.ext import Updater, InlineQueryHandler, CallbackQueryHandler, CommandHandler, MessageHandler, CallbackQueryHandler, Filters
 from telegram.utils.helpers import escape_markdown
 
-botToken = ""
+botToken = "2014324973:AAEFIga73EHC2AdkG7nbnfLnxgS_d92bXg0"
 
 cuscuzbot = telegram.Bot(botToken)
 
@@ -81,6 +81,12 @@ def resultado(update, context):
     resultado = pd.read_csv('resultado.csv', header=None)
     resultado = resultado.sort_values([3], ascending=False)
     resultado.to_csv("resultado.csv", sep=',', header=None, index=False)
+
+    resultado = open("resultado.csv", "r+")
+    for linha in resultado:
+        competidor = linha.split(',')
+        update.message.reply_text(str(competidor[0]) + " " + str(competidor[1]) + " " + str(competidor[2]) + " " + str(competidor[3]))
+    resultado.close()
 
 def desempate(update, context):
     participantes = []
