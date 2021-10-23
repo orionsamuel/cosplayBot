@@ -15,7 +15,7 @@ def listar(update, context):
     participantes = open("participantes.csv", "r+")
     for linha in participantes:
         competidor = linha.split(',')
-        update.message.reply_text(str(competidor[0]) + " " + str(competidor[1]) + " " + str(competidor[2]))
+        update.message.reply_text(str(competidor[0]) + " - " + str(competidor[1]) + " - " + str(competidor[2]))
     participantes.close()
 
 
@@ -85,7 +85,7 @@ def resultado(update, context):
     resultado = open("resultado.csv", "r+")
     for linha in resultado:
         competidor = linha.split(',')
-        update.message.reply_text(str(competidor[0]) + " " + str(competidor[1]) + " " + str(competidor[2]) + " " + str(competidor[3]))
+        update.message.reply_text(str(competidor[0]) + " - " + str(competidor[1]) + " " + str(competidor[2]) + " - " + str(competidor[3]))
     resultado.close()
 
 def desempate(update, context):
@@ -102,8 +102,8 @@ def desempate(update, context):
         notasLeitura.close()
         
     participanteDesempate = sorted(participantes, key = lambda x: x[3])
-    update.message.reply_text(str(participanteDesempate[0][0]) + " " + str(participanteDesempate[0][1]) + " " +
-                              str(participanteDesempate[0][2]) + " " + str(participanteDesempate[0][3]))
+    update.message.reply_text(str(participanteDesempate[0][0]) + " - " + str(participanteDesempate[0][1]) + " - " +
+                              str(participanteDesempate[0][2]) + " - " + str(participanteDesempate[0][3]))
 
 
 def foto(update, context):
